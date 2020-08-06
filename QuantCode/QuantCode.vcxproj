@@ -18,6 +18,21 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\EuropeanOption.cpp" />
+    <ClCompile Include="..\LiborMarketModel.cpp" />
+    <ClCompile Include="..\main.cpp" />
+    <ClCompile Include="..\Misc.cpp" />
+    <ClCompile Include="..\PCA.cpp" />
+    <ClCompile Include="..\SABR.cpp" />
+    <ClCompile Include="..\Tools.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\EuropeanOption.h" />
+    <ClInclude Include="..\LiborMarketModel.h" />
+    <ClInclude Include="..\PCA.h" />
+    <ClInclude Include="..\SABR.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{CC988C40-0113-402D-A485-3A24A73D0CAB}</ProjectGuid>
@@ -69,7 +84,14 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\Users\sahn4\boost_1_72_0;C:\Users\sahn4\eigen-eigen-323c052e1731</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64;C:\Users\sahn4\boost_1_72_0;C:\Users\sahn4\eigen-eigen-323c052e1731</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\Users\sahn4\boost_1_72_0;C:\Users\sahn4\eigen-eigen-323c052e1731</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64;C:\Users\sahn4\boost_1_72_0;C:\Users\sahn4\eigen-eigen-323c052e1731</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -122,8 +144,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
