@@ -67,7 +67,7 @@ int main() {
 	//testBoothFun();
 	//testHimmelblauFun();
 
-
+	
 	Eigen::ArrayXd sigCapFloor(5);
 	sigCapFloor << 0.225, 0.216, 0.206, 0.202, 0.193;
 	Eigen::ArrayXd term(5);
@@ -83,10 +83,10 @@ int main() {
 		0.98, 0.98, 0.98, 1, 0.98,
 		0.98, 0.98, 0.98, 0.98, 1;
 	L.MC(1, 10, 100);
+	
 
-
-	/*
-	EuropeanOption<float> t1(100, 95, 0.02, 0.2, 1);
+	
+	/*EuropeanOption<float> t1(100, 95, 0.02, 0.2, 1);
 
 	t1.Pricer_BSE("call");
 	t1.Pricer_BSE("put");
@@ -97,8 +97,8 @@ int main() {
 	t1.Pricer_FD("call", "implicit", 50, 50, 3);
 	t1.Pricer_FD("put", "implicit", 50, 50, 3);
 	t1.Pricer_FD("call", "crank-nicolson", 50, 50, 3);
-	t1.Pricer_FD("put", "crank-nicolson", 50, 50, 3);
-	*/
+	t1.Pricer_FD("put", "crank-nicolson", 50, 50, 3);*/
+	
 
 	return 0;
 };
